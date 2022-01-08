@@ -20,6 +20,22 @@ class FlowersController < ApplicationController
     end
   end
 
+  def destroy
+    set_flower
+    @flower.destroy
+    redirect_to flowers_path
+  end
+
+  def edit
+    set_flower
+  end
+
+  def update
+    set_flower
+    @flower.update(flower_params)
+    redirect_to flowers_path
+  end
+
 private
 
 def flower_params
