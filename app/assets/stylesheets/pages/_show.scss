@@ -1,0 +1,36 @@
+.show-case{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-case{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+.atout{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.atout-card{
+  border: solid, 1px, green;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.details{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.details h3{
+  text-align: left;
+}
