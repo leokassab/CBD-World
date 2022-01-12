@@ -1,0 +1,30 @@
+<%= simple_form_for(flower) do |f| %>
+  <div class="d-flex justify-content-between p-4">
+    <div>
+      <%= f.input :name %>
+      <%= f.input :country, as: :country, priority: ['FR'] %>
+      <%= f.input :category %>
+      <%= f.input :description %>
+      <%= f.input :cbd_ratio, label: 'CBD ratio' %>
+      <%= f.input :effect %>
+      <%= f.input :flavor %>
+      <%= f.input :price %>
+      <%= f.input :weight %>
+    </div>
+    <div>
+      <h3>Upload Product Picture</h3>
+      <div >
+        <%= f.input :photo, as: :file %>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex pb-4 justify-content-around">
+    <% if flower.id.nil? %>
+      <%= f.submit "Add your product", class: "btn btn-flat" %>
+      <%= link_to "Cancel", flowers_path, class: "btn btn-flat" %>
+    <% else %>
+      <%= f.submit "Update your product", class: "btn btn-flat" %>
+      <%= link_to "Cancel", flower_path(flower), class: "btn btn-flat" %>
+    <% end %>
+  </div>
+<% end %>

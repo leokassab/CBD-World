@@ -1,0 +1,16 @@
+.form h1, .form h3 {
+  color: $light-green;
+}
+
+.form {
+  background-color: rgb(245, 247, 245);
+  border: 2px solid $light-green;
+  border-radius: 4px;
+  width: 900px;
+  margin: 16px auto;
+  box-shadow: 0px 10px 15px rgba(0,0,0,.1);
+}
+
+.form .btn {
+  background-color: rgb(0, 100, 0);
+}
