@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+
   def index
     my_orders = Order.where(user: current_user)
   end
