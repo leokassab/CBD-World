@@ -9,7 +9,7 @@
   border-radius: 5px;
 }
 
-.card-product > img {
+.card-product > a > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
@@ -30,11 +30,18 @@
 
 
 .card-product .card-product-infos {
-  padding: 16px;
+  padding: 8px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+.card-product .card-product-cta {
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-product-infos .card-product-user {
