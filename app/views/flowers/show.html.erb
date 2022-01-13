@@ -3,10 +3,10 @@
     <div class="image">
     </div>
     <div>
-      <h2><%= flower.name %></h2>
-      <h3><%= flower.price %></h3>
-      <p><%= flower.description %></p>
-      <p><%= flower.weight %></p>
+      <h2><%= @flower.name %></h2>
+      <h3><%= @flower.price %></h3>
+      <p><%= @flower.description %></p>
+      <p><%= @flower.weight %></p>
     </div>
   </div>
 
@@ -34,27 +34,27 @@
     <h3 class=fiche-tec>Fiche technique</h3>
     <div class="detail-case">
       <p>Prix a partir de :</p>
-      <p><%= flower.price %></p>
+      <p><%= @flower.price %></p>
     </div>
     <div class="detail-case">
       <p>Provenance :</p>
-      <p><%= flower.country %></p>
+      <p><%= @flower.country %></p>
     </div>
     <div class="detail-case">
       <p>Type :</p>
-      <p><%= flower.category %></p>
+      <p><%= @flower.category %></p>
     </div>
     <div class="detail-case">
       <p>Effet :</p>
-      <p><%= flower.effect %></p>
+      <p><%= @flower.effect %></p>
     </div>
     <div class="detail-case">
       <p>Flavor :</p>
-      <p><%= flower.flavor %></p>
+      <p><%= @flower.flavor %></p>
     </div>
     <div class="detail-case">
       <p>CBD ratio in % :</p>
-      <p><%= flower.cbd_ratio %></p>
+      <p><%= @flower.cbd_ratio %></p>
     </div>
   </div>
 </div>
