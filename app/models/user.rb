@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :orders
   has_many :reviews
+
   validates :email, :phone_number, uniqueness: true, presence: true
   validates :adress, :first_name, :last_name, presence: true
+  has_many :flowers
 end

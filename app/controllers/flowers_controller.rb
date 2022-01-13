@@ -13,6 +13,7 @@ class FlowersController < ApplicationController
 
   def create
     @flower = Flower.new(flower_params)
+    @flower.user =  current_user
     if @flower.save
       redirect_to flower_path(@flower)
     else
@@ -36,13 +37,16 @@ class FlowersController < ApplicationController
     redirect_to flowers_path
   end
 
-private
+  def get
+  end
+
+  private
 
 def flower_params
-  params.require(:flower).permit(:name, :price, :country, :category , :description, :cbd_ratio, :effect, :flavor, :weight)
+  params.require(:flower).permit(:name, :price, :country, :category , :description, :cbd_ratio, :effect, :flavor, :weight, :photo)
 end
 
-def set_flower
-  @flower = Flower.find(params[:id])
-end
+  def set_flower
+    @flower = Flower.find(params[:id])
+  end
 end
