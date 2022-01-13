@@ -1,20 +1,26 @@
 <%= simple_form_for(flower) do |f| %>
   <div class="d-flex justify-content-between p-4">
     <div>
-      <%= f.input :name %>
+      <%= f.input :name, :placeholder => 'Name of the product'  %>
       <%= f.input :country,label: 'Origin', as: :country, priority: ['FR'] %>
-      <%= f.input :category %>
-      <%= f.input :description %>
-      <%= f.input :cbd_ratio, label: 'CBD ratio' %>
-      <%= f.input :effect, :placeholder => 'ex: analgesic' %>
+      <%= f.input :category, as: :radio_buttons, :collection => ["Indica", "Sativa", "Hybrid"], wrapper: :vertical_collection_inline %>
+      <%= f.input :description, :placeholder => 'Tell about the product' %>
+      <%= f.input :cbd_ratio, label: 'CBD ratio in %', :collection => (3..9) %>
+      <%= f.input :effect, :placeholder => 'Ex: analgesic' %>
       <%= f.input :flavor %>
-      <%= f.input :weight, :collection => [1, 3, 5, 10], :prompt => "Select the weight in g" %>
+      <%= f.input :weight, label: 'Weight (in g)', as: :radio_buttons, :collection => [1, 3, 5, 10], wrapper: :vertical_collection_inline %>
       <%= f.input :price %>
     </div>
     <div>
-      <h3>Upload Product Picture</h3>
-      <div >
-        <%= f.input :photo, as: :file %>
+      <h3 class= mb-5>Upload Product Picture</h3>
+      <img src="" class="preview" height="200" alt="Image preview...">
+      <div class="file-select mt-5">
+        <label  class="btn btn-primary">
+          Add a file !
+          <span style="display:none;">
+            <%= f.input :photo, as: :file %>
+          </span>
+        </label>
       </div>
     </div>
   </div>
