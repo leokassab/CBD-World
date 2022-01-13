@@ -37,13 +37,13 @@ class FlowersController < ApplicationController
     redirect_to flowers_path
   end
 
-private
+  private
 
 def flower_params
   params.require(:flower).permit(:name, :price, :country, :category , :description, :cbd_ratio, :effect, :flavor, :weight, :photo)
 end
 
-def set_flower
-  @flower = Flower.find(params[:id])
-end
+  def set_flower
+    @flower = Flower.find(params[:id])
+  end
 end
