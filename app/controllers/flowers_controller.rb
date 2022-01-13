@@ -13,6 +13,7 @@ class FlowersController < ApplicationController
 
   def create
     @flower = Flower.new(flower_params)
+    @flower.user =  current_user
     if @flower.save
       redirect_to flower_path(@flower)
     else
