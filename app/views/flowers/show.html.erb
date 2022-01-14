@@ -1,12 +1,13 @@
 <div class="container">
   <div class="show-case">
     <div class="image">
+      <%= image_tag("bubble-gum-cbd.jpeg") %>
     </div>
     <div>
       <h2><%= @flower.name %></h2>
-      <h3><%= @flower.price %></h3>
+      <h3><%= @flower.price %>€</h3>
       <p><%= @flower.description %></p>
-      <p><%= @flower.weight %></p>
+      <p><%= @flower.weight %>g</p>
     </div>
   </div>
 
@@ -54,14 +55,16 @@
     </div>
     <div class="detail-case">
       <p>CBD ratio in % :</p>
-      <p><%= @flower.cbd_ratio %></p>
+      <p><%= @flower.cbd_ratio.round(2) %></p>
     </div>
   </div>
-  <div class="review">
-    <h2>Reviews</h2>
-    <div class="review-card">
-      <%=  %>
+  <% if false %>
+    <div class="review">
+      <h2>Reviews</h2>
+      <div class="review-card">
+        <%=  %>
+      </div>
     </div>
-  </div>
+  <% end %>
   <%= link_to 'Back', flowers_path, class: 'btn btn-flat' %>
 </div>
