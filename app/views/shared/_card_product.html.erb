@@ -1,5 +1,5 @@
 <div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <%= cl_image_tag flower.photo.key, height:300, width: 400, crop: :fill %>
   <div class="card-product-infos">
     <h3><%= @flower.name %></h3>
     <p><%= "price:" @flower.price"€" %></p>
