@@ -8,8 +8,10 @@
         <div class="card-product">
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
           <div class="card-product-infos">
-            <%= flower.name %>
-            <%= flower.price %>
+            <p><%= flower.name %></p>
+            <p><%= flower.cbd_ratio.round(2)"%" %></p>
+            <p><%= flower.price"€" %></p>
+
           </div>
         </div>
       <% end %>
