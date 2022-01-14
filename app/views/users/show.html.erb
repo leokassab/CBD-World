@@ -1,0 +1,32 @@
+
+
+
+<div class="container">
+  <h1>My products</h1>
+  <% if current_user.flowers.count == 1 || current_user.flowers.count == 0 %>
+    <p><%= "#{current_user.flowers.count} flower" %></p>
+  <% else %>
+    <p><%= "#{current_user.flowers.count} flowers" %></p>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="d-flex justify-content">
+    <%= link_to "Add a product", new_flower_path, class: " btn btn-ghost "  %>
+  </div>
+  <div class="product-section">
+    <% current_user.flowers.each do |flower| %>
+      <%= link_to flower_path(flower.id) do %>
+        <div class="card-product">
+          <%= cl_image_tag flower.photo.key, height:300, width: 400, crop: :fill %>
+          <div class="card-product-infos">
+            <%= flower.name %>
+            <%= flower.price %>
+            <%= link_to "update", edit_flower_path(flower),  class: "btn btn-flat" %>
+            <%= link_to "delete", flower_path(flower), method: :delete, data: { confirm: "Sure?" }, class: "btn btn-flat" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
