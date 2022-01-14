@@ -18,10 +18,12 @@
     <% current_user.flowers.each do |flower| %>
       <%= link_to flower_path(flower.id) do %>
         <div class="card-product">
-          <%= cl_image_tag flower.photo.key %>
+          <%= cl_image_tag flower.photo.key, height:300, width: 400, crop: :fill %>
           <div class="card-product-infos">
             <%= flower.name %>
             <%= flower.price %>
+            <%= link_to "update", edit_flower_path(flower),  class: "btn btn-flat" %>
+            <%= link_to "delete", flower_path(flower), method: :delete, data: { confirm: "Sure?" }, class: "btn btn-flat" %>
           </div>
         </div>
       <% end %>
