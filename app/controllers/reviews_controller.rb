@@ -15,7 +15,6 @@ class ReviewsController < ApplicationController
     @user = current_user
     @review.flower = @flower
     @review.user = @user
-    raise
     if @review.save
       redirect_to flower_path(@flower)
     else

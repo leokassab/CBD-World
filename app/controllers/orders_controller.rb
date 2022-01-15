@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  skip_before_action :authenticate_user! , only: [:index, :show, :new]
 
   def index
     @orders = Order.where(user: current_user)
@@ -22,7 +23,6 @@ class OrdersController < ApplicationController
     @flower = Flower.find(params[:flower_id])
     @user = current_user
     @order = Order.new
-
   end
 
   def create
