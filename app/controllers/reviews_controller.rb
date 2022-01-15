@@ -1,4 +1,9 @@
 class ReviewsController < ApplicationController
+
+  def index
+    @review = Review.all
+  end
+
   def new
     @flower = @Flower.find(params[:flowers_id])
     @review = @Review.new
@@ -15,22 +20,19 @@ class ReviewsController < ApplicationController
     else
       render :new
     end
-
-    def destroy
-      @reviews = @Review.find(params[:id])
-      @review.destroy
-
-      redirect_to flower_path(@review.restaurant)
-    end
-
   end
 
-  def index
-    @review = Review.all
+  def destroy
+    @reviews = @Review.find(params[:id])
+    @review.destroy
+
+    redirect_to flower_path(@review.restaurant)
   end
+
+
   private
 
   def reviews_params
-    params.require(:pemrit).permit(:grade, :comment)
+    params.require(:review).permit(:grade, :comment) #, :comment, :flowers_id, :user_id)
   end
 end
