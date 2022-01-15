@@ -1,19 +1,22 @@
 class FlowersController < ApplicationController
   def index
-    @flowers = Flower.all
+    @flowers = policy_scope(Flower.all)
   end
 
   def show
     set_flower
+    authorize @flower
   end
 
   def new
     @flower = Flower.new
+    authorize @flower
   end
 
   def create
     @flower = Flower.new(flower_params)
     @flower.user =  current_user
+    authorize @flower
     if @flower.save
       redirect_to flower_path(@flower)
     else
@@ -24,17 +27,20 @@ class FlowersController < ApplicationController
   def destroy
     set_flower
     @flower.destroy
+    authorize @flower
     redirect_to user_path(current_user)
   end
 
   def edit
     set_flower
+    authorize @flower
   end
 
   def update
     set_flower
     @flower.user =  current_user
     @flower.update(flower_params)
+    authorize @flower
     redirect_to user_path(current_user)
   end
 
