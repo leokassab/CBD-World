@@ -5,14 +5,14 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @flower = @Flower.find(params[:flowers_id])
-    @review = @Review.new
+    @flower = Flower.find(params[:flower_id])
+    @review = Review.new
   end
 
   def create
-    @review = @Review.new()
-    @flower = @Flower.find(params[:flowers_id])
-    @user = @User.find(params[:user_id])
+    @review = Review.new(reviews_params)
+    @flower = Flower.find(params[:flower_id])
+    @user = User.find(params[:user_id])
     @review.flower_id = @flower
     @review.user_id = @user
     if @review.save
