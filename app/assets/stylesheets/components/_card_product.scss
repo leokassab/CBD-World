@@ -25,8 +25,13 @@
 }
 
 .card-product-infos {
- text-align: center;
- padding: 16px;
- text-decoration: none;
- color: black;
+  text-align: center;
+  padding: 16px;
+  color: black;
+}
+
+.bouttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
