@@ -3,30 +3,15 @@
 <h2>Fleurs du moment :</h2>
 
   <div class="product-section">
-    <div class="card-product">
-      <a href="google"></a>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-product-infos">
-        <div>
-          <h2>Flower name
-          <a href="">Découvrir</a>
-          </h2>
-          <p>Flower description</p>
-          <a href="">Commander</a>
+    <% @flowers.each do |flower| %>
+      <%= link_to flower_path(flower.id) do %>
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="card-product-infos">
+            <%= flower.name %>
+            <%= flower.price %>
+          </div>
         </div>
-        <h2 class="card-product-pricing"> X €</h2>
-      </div>
-    <div class="card-product">
-      <a href="google"></a>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-product-infos">
-        <div>
-          <h2>Flower name
-          <a href="">Découvrir</a>
-          </h2>
-          <p>Flower description</p>
-          <a href="">Commander</a>
-        </div>
-        <h2 class="card-product-pricing"> X €</h2>
-    </div>
+      <% end %>
+    <% end %>
   </div>

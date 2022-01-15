@@ -24,7 +24,7 @@ class FlowersController < ApplicationController
   def destroy
     set_flower
     @flower.destroy
-    redirect_to flowers_path
+    redirect_to user_path(current_user)
   end
 
   def edit
@@ -33,8 +33,9 @@ class FlowersController < ApplicationController
 
   def update
     set_flower
+    @flower.user =  current_user
     @flower.update(flower_params)
-    redirect_to flowers_path
+    redirect_to user_path(current_user)
   end
 
   private

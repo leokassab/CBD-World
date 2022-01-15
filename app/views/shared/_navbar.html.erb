@@ -7,13 +7,13 @@
       <span class="navbar-toggler-iconn"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav me-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home</a>
+          <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Products</a>
+          <%= link_to "Products", flowers_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">CBD Story</a>
@@ -21,12 +21,24 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
-        <li class="nav-item dropdown">
-          <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">My account</a>
-            <a class="dropdown-item" href="#">Log out</a>
-          </div>
+        <li class="nav-item dropleft">
+          <% if user_signed_in? %>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/random", class: "avatar dropdown-toggle", id: "navbarDropdownMenuLink", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to "My account","#", class: "dropdown-item" %>
+              <%= link_to "My products",user_path(current_user), class: "dropdown-item" %>
+              <%= link_to "My orders", orders_path(current_user), class: "dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
+            </div>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+            </li>
+          <% end %>
         </li>
       </ul>
     </div>

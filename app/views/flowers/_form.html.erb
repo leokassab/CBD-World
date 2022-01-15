@@ -27,7 +27,7 @@
   <div class="d-flex pb-4 justify-content-around">
     <% if flower.id.nil? %>
       <%= f.submit "Add your product", class: "btn btn-flat" %>
-      <%= link_to "Cancel", flowers_path, class: "btn btn-flat" %>
+      <%= link_to "Cancel", user_path(current_user), class: "btn btn-flat" %>
     <% else %>
       <%= f.submit "Update your product", class: "btn btn-flat" %>
       <%= link_to "Cancel", flower_path(flower), class: "btn btn-flat" %>
