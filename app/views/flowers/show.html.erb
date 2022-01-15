@@ -8,7 +8,7 @@
       <h3><%= @flower.price %>€</h3>
       <p><%= @flower.description %></p>
       <p><%= @flower.weight %>g</p>
-      <%= link_to 'Ajouter au panier', order_path, class: "btn btn-outline-warning" %>
+      <%= link_to 'Ajouter au panier', new_flower_order_path(@flower), class: "btn btn-outline-warning" %>
     </div>
   </div>
 
