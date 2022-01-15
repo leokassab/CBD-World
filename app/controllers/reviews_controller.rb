@@ -10,10 +10,24 @@ class ReviewsController < ApplicationController
     @user = @User.find(params[:user_id])
     @review.flower_id = @flower
     @review.user_id = @user
-    @review.save
-    redirect_to flower_path(@flower)
+    if @review.save
+      redirect_to flower_path(@flower)
+    else
+      render :new
+    end
+
+    def destroy
+      @reviews = @Review.find(params[:id])
+      @review.destroy
+
+      redirect_to flower_path(@review.restaurant)
+    end
+
   end
 
+  def index
+    @review = Review.all
+  end
   private
 
   def reviews_params
