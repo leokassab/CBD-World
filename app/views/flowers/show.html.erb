@@ -58,17 +58,13 @@
       <p><%= @flower.cbd_ratio.round(2) %></p>
     </div>
   </div>
-  <% if false %>
-    <div class="review">
-      <h2>Reviews</h2>
-      <div class="review-card">
-        <%=  %>
-      </div>
+  <div class="review">
+    <h2>Reviews</h2>
+    <div class="review-card">
     </div>
-  <% end %>
-  <%= link_to 'Back', flowers_path, class: 'btn btn-flat' %>
-</div>
+  </div>
 
-<%= link_to 'Edit', edit_flower_path(@flower) %>
-<%= link_to 'Back', flowers_path %>
-<%= link_to 'Leave a review', new_flower_review_path(@flower) %>
+  <%= link_to 'Back', flowers_path, class: 'btn btn-flat' %>
+  <%= link_to 'Leave a review', new_flower_review_path(@flower), class: 'btn btn-flat' %>
+
+</div>
