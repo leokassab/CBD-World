@@ -1,15 +1,7 @@
-<div class="container">
-  <%= simple_form_for @flower do |f| %>
-    <%= f.input :name %>
-    <%= f.input :country, as: :country, priority: ['FR'] %>
-    <%# <%= f.input :category %> %>
-    <%= f.input :description %>
-    <%= f.input :cbd_ratio %>
-    <%= f.input :effect %>
-    <%= f.input :flavor %>
-    <%= f.input :price %>
-    <%= f.input :weight %>
-    <%# <%= f.input :photo, as: :file %> %>
-    <%= f.submit "Add your product", class: "btn-ghost" %>
-  <% end %>
+<div class="container form">
+  <div class="text-center pt-4 pb-4">
+    <h1>Add a product</h1>
+  </div>
+
+  <%= render 'form', flower: @flower %>
 </div>
