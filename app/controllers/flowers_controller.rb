@@ -37,9 +37,6 @@ class FlowersController < ApplicationController
     redirect_to flowers_path
   end
 
-  def get
-  end
-
   private
 
 def flower_params
