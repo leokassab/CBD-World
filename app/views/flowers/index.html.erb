@@ -6,12 +6,13 @@
     <% @flowers.each do |flower| %>
       <%= link_to flower_path(flower.id) do %>
         <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+           <%= image_tag("bubble-gum-cbd.jpeg") %>
           <div class="card-product-infos">
-            <%= flower.name %>
-            <%= flower.price %>
+            <h3><%= flower.name %></h3>
+            <p>price: <%= flower.price %>€</p>
+            <p>CBD ratio <%= flower.cbd_ratio.round(2) %>%</p>
           </div>
-        </div>
+       </div>
       <% end %>
     <% end %>
   </div>
