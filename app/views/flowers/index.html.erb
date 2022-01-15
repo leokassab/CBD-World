@@ -5,7 +5,13 @@
   <div class="product-section">
     <% @flowers.each do |flower| %>
         <div class="card-product">
-            <%= image_tag("bubble-gum-cbd.jpeg") %>
+          <% if flower.photo.attached?%>
+            <%= cl_image_tag flower.photo.key %>
+          <% elsif Rails.env.production? %>
+            <%= cl_image_tag "uev9db9v7q6aoikckl6tigrt1cxn" %>
+          <% else %>
+            <%= cl_image_tag "v1642155300/development/trx7himx75w75h42qcrhdgqjdnoj.jpg"%>
+          <% end %>
           <div class="card-product-infos">
             <%= link_to flower_path(flower.id) do %>
               <h3><%= flower.name %></h3>
