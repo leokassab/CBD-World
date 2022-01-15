@@ -1,0 +1,7 @@
+<h1>Ajouter un nouveau commentaire</h1>
+
+<%= simple_form_for [ @flower, @review ] do |f| %>
+  <%= f.input :grade %>
+  <%= f.input :comment %>
+  <%= f.submit "Ajouter le commentaire", class: "btn btn-primary" %>
+<% end %>
