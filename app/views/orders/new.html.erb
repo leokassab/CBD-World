@@ -3,8 +3,8 @@
 <div class="container">
   <div class="show-case">
     <div class="image">
-      <% if flower.photo.attached?%>
-            <%= cl_image_tag flower.photo.key %>
+      <% if @flower.photo.attached?%>
+            <%= cl_image_tag @flower.photo.key %>
           <% elsif Rails.env.production? %>
             <%= cl_image_tag "uev9db9v7q6aoikckl6tigrt1cxn" %>
           <% else %>
