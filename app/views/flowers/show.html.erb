@@ -68,6 +68,11 @@
   <div class="review">
     <h2>Reviews</h2>
     <div class="review-card">
+      <ul><% @flower.reviews.each do |review| %>
+           <li><%= review.comment %></li>
+           <li><%= "⭐️"*review.grade %></li>
+         <% end %>
+      </ul>
     </div>
   </div>
 
