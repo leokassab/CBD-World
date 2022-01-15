@@ -5,15 +5,15 @@ class OrdersController < ApplicationController
   end
 
   def show
-    my_order
+    set_order
   end
 
   def edit
-    my_order
+    set_order
   end
 
   def destroy
-    my_order
+    set_order
     @order.destroy
     redirect_to orders_path
   end
@@ -34,15 +34,11 @@ class OrdersController < ApplicationController
      render :new
    end
 
-  def destroy
-
-  end
-
   end
 
   private
 
-  def my_order
+  def set_order
     @order = Order.find(params[:id])
   end
 end
