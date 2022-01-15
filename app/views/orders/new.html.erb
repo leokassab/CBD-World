@@ -3,7 +3,13 @@
 <div class="container">
   <div class="show-case">
     <div class="image">
-      <%= image_tag("bubble-gum-cbd.jpeg") %>
+      <% if flower.photo.attached?%>
+            <%= cl_image_tag flower.photo.key %>
+          <% elsif Rails.env.production? %>
+            <%= cl_image_tag "uev9db9v7q6aoikckl6tigrt1cxn" %>
+          <% else %>
+            <%= cl_image_tag "v1642155300/development/trx7himx75w75h42qcrhdgqjdnoj.jpg"%>
+          <% end %>
     </div>
     <div>
       <h2><%= @flower.name %></h2>
