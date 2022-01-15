@@ -14,11 +14,11 @@ class FlowerPolicy < ApplicationPolicy
   end
 
   def new?
-    current_user.merchant
+    user.merchant
   end
 
   def create?
-    current_user.merchant
+    user.merchant
   end
 
   def edit?
@@ -32,4 +32,5 @@ class FlowerPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
 end

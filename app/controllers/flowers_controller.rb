@@ -1,4 +1,5 @@
 class FlowersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @flowers = policy_scope(Flower.all)
   end
