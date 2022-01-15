@@ -1,26 +1,44 @@
 class OrdersController < ApplicationController
 
   def index
-    my_orders = Order.where(user: current_user)
+    @orders = Order.where(user: current_user)
   end
 
   def show
-    my_order
+    set_order
   end
 
   def edit
-    my_order
+    set_order
   end
 
   def destroy
-    my_order
+    set_order
     @order.destroy
     redirect_to orders_path
   end
 
+  def new
+    @flower = Flower.find(params[:flower_id])
+    @user = current_user
+    @order = Order.new
+
+  end
+
+  def create
+    @flower = Flower.find(params[:flower_id])
+    order = Order.new(paid: true, flower_id: @flower.id, user_id: current_user.id)
+    if order.save
+      redirect_to orders_path
+   else
+     render :new
+   end
+
+  end
+
   private
 
-  def my_order
+  def set_order
     @order = Order.find(params[:id])
   end
 end
