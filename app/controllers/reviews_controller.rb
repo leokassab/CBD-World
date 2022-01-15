@@ -12,8 +12,8 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(reviews_params)
     @flower = Flower.find(params[:flower_id])
-    @user = User.find(params[:user_id])
-    @review.flower_id = @flower
+    @user = current_user
+    @review.flowers_id = @flower
     @review.user_id = @user
     if @review.save
       redirect_to flower_path(@flower)
@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
     @reviews = Review.find(params[:id])
     @review.destroy
 
-    redirect_to flower_path(@review.restaurant)
+    redirect_to flower_path(@review.flower)
   end
 
   def show
@@ -36,6 +36,6 @@ class ReviewsController < ApplicationController
   private
 
   def reviews_params
-    params.require(:review).permit(:grade, :comment) #, :comment, :flowers_id, :user_id)
+    params.require(:review).permit(:grade, :comment, :user_id, :flowers_id) #, :comment, :flowers_id, :user_id)
   end
 end
