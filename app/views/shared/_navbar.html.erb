@@ -23,7 +23,6 @@
         </li>
         <li class="nav-item dropleft">
           <% if user_signed_in? %>
-            <p> <%= current_user.email %> </p>
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/random", class: "avatar dropdown-toggle", id: "navbarDropdownMenuLink", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
               <%= link_to "My account","#", class: "dropdown-item" %>
