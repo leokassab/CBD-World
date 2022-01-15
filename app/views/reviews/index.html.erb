@@ -1,1 +1,6 @@
 <h1>Liste des commentaires</h1>
+<ul>
+  <% @review.each do |review| %>
+  <li>Grade : <%=review.grade %> & Comment : <%=review.comment %> </li>
+  <% end %>
+</ul>
