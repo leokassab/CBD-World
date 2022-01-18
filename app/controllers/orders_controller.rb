@@ -30,10 +30,9 @@ class OrdersController < ApplicationController
     order = Order.new(paid: true, flower_id: @flower.id, user_id: current_user.id)
     if order.save
       redirect_to orders_path
-   else
-     render :new
-   end
-
+    else
+      render :new
+    end
   end
 
   private
