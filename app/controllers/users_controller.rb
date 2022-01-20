@@ -16,6 +16,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def cart
+    set_user
+    authorize @user
+  end
+
   private
 
   def set_user
