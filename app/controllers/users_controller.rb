@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @sales = []
 
     @user.flowers.each do |flower|
-      flower.orders.each do |order|
+      flower.orders.order(created_at: :desc).each do |order|
         @sales << order
       end
     end
