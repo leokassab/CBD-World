@@ -8,4 +8,12 @@ class UserPolicy < ApplicationPolicy
   def show?
     return true
   end
+
+  def sales?
+    return true
+  end
+
+  def cart?
+    return true
+  end
 end

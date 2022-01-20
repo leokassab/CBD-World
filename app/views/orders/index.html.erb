@@ -1,8 +1,8 @@
 <h1>My orders</h1>
 
 <ul>
-  <% @orders.each do |order| %>
-    <li><%= render "card_order", order: order %></li>
+  <% @orders.where(paid: true).each do |order| %>
+    <li><%= render "../users/card_order", order: order %></li>
   <% end %>
 </ul>
 

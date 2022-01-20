@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+  devise_for :users, :controllers => {
+    registrations: 'registrations'
+  }
+
   root to: "pages#home"
   get 'cbd_story', to: 'pages#cbd_story'
   get 'contact', to: 'pages#contact'
@@ -9,5 +13,10 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :show, :new, :create, :destroy, :update]
   end
   resources :orders, only: [:show, :update, :index, :destroy]
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    member do
+      get :sales
+      get :cart
+    end
+  end
 end
