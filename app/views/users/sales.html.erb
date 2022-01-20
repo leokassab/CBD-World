@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>My sales</h1>
+</div>
+
+<div class="container">
+
+    <% @sales.each do |sale| %>
+
+      <div class="card-sale">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-sale-infos">
+          <h2> <%= "Command number: #{sale.id}" %> </h2>
+          <p><%= "Date: #{sale.created_at}" %></p>
+          <p><%= "Buyer: #{sale.user.first_name} #{sale.user.last_name}" %></p>
+        </div>
+        <div >
+          <h2> <%= "Total: #{sale.total_amount} €" %> </h2>
+          <p>See details</p>
+        </div>
+      </div>
+    <% end %>
+</div>
