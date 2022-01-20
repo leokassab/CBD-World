@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-
   devise_for :users
   root to: "pages#home"
+  get 'cbd_story', to: 'pages#cbd_story'
+  get 'contact', to: 'pages#contact'
 
   resources :flowers do
     resources :orders, only: [:new, :create, :index]
