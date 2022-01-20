@@ -21,6 +21,11 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
+        <li>
+          <%= link_to cart_user_path(current_user), class: "nav-link" do %>
+            <i class="fas fa-shopping-cart"></i>
+          <% end %>
+        </li>
         <li class="nav-item dropleft">
           <% if user_signed_in? %>
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/random", class: "avatar dropdown-toggle", id: "navbarDropdownMenuLink", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
