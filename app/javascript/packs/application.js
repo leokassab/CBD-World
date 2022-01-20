@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import { pictUploaded } from '../components/_uploaded'
+import { merchantSignUp } from '../components/_signup';
 
 Rails.start()
 Turbolinks.start()
@@ -28,5 +29,6 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  pictUploaded();
+  // pictUploaded();
+  merchantSignUp();
 });
