@@ -4,7 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :orders
+
+  has_many :flowers
   has_many :reviews
+
   has_many :flowers
   validates :email,  uniqueness: true, presence: true
   validates :adress, :first_name, :last_name, :zip_code, :city, :country, :phone_number, presence: true
