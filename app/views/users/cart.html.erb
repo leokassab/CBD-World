@@ -14,7 +14,8 @@
         <% @user.orders.where(paid: false).each do |order|%>
           <% @total += order.flower.price %>
           <%= @total %>€
-        <% end %></p>
+        <% end %>
+        </p>
       </div>
       <div class="exp">
         <p>Expédition</p>
@@ -23,7 +24,7 @@
       <hr>
       <div class="exp">
         <p>Total TTC</p>
-        <p><%= @total %></p>
+        <p><%= @total %>€</p>
       </div>
       <hr>
       <%= link_to "Commander", class: "btn btn-success" %>
