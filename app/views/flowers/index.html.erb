@@ -37,7 +37,7 @@
             <div class="card-product-buttons">
               <%= simple_form_for [flower, Order.new] do |f| %>
                 <%= hidden_field_tag :from, 'show' %>
-                <%= f.button :submit, value: 'Add to cart', class: "black-button" %>
+                <%= f.button :submit, value: 'Add to cart', class: "black-button", id: "notiforder" %>
               <% end %>
               <%= link_to 'See More', flower_path(flower.id), class: "white-button" %>
             </div>

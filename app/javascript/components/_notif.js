@@ -1,6 +1,6 @@
 const putIntoBasket = () => {
 
-  const command = document.querySelector("#order");
+  const command = document.querySelector("#notiforder");
   if (command) {
     command.addEventListener("click", () => {
     const badge = document.querySelector(".badge");
