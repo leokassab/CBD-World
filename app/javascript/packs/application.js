@@ -10,6 +10,7 @@ import "channels"
 import { pictUploaded } from '../components/_uploaded'
 import { merchantSignUp } from '../components/_signup';
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

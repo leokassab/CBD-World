@@ -42,3 +42,26 @@
 .value_prop {
   background: lightgreen;
 }
+
+
+.carousel-inner {
+  display: flex;
+}
+
+.product-section-promo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.promo-product .card-product{
+  height: 400px;
+  width: 300px;
+}
+.carousel-item .card-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
