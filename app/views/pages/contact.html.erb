@@ -1,0 +1,34 @@
+<div class="text-center mb-5">
+  <h2>Contact us</h2>
+</div>
+<div class="container">
+  <div>
+    <p><i class="fas fa-info-circle"></i> Your contact in Paris</p>
+  </div>
+  <div class="d-flex mb-3">
+    <%= image_tag "85503714.jpg", style: 'height:120px; width:auto;' %>
+    <div class="ml-5">
+      <h3>Elliott GABISON</h3>
+      <p>Customer Relations Manager</p>
+      <p>elliott@pastrycbd.com</p>
+      <p><strong><span id="contact-typed-text"></span></strong> </p>
+    </div>
+  </div>
+  <div>
+
+  </div>
+</div>
+
+<div class="container d-flex justify-content-between">
+  <div class="mr-5">
+    <p><i class="fas fa-map-marker"></i> <strong>CBD World</strong></p>
+    <p>Ingenieur FED Enschedeweg</p>
+    <p>3405 Benschop</p>
+    <p>Netherlands</p>
+  </div>
+  <div class="flex-grow-1" id="map"
+      style="width: 50%; height: 400px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
