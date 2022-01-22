@@ -14,6 +14,7 @@ import { putIntoBasket } from '../components/_notif';
 import { initMapbox } from '../plugins/init_mapbox';
 import { loadDynamicContactText } from '../components/_contact';
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
