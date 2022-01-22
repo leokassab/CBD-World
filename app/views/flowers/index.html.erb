@@ -5,12 +5,7 @@
   </div>
 </div>
 <div class="container">
-<%# <div class="top-content">
-  <h1>Discover our products</h1>
-  </div> %>
-    <%# <hr/> %>
-  <div class="product-section">
-   <h3>Filter flowers by :</h3>
+  <div class="product-filters">
     <%= link_to "A to Z", flowers_path(order:'az'), class:"black-link"%>
     <%= link_to "Z to A", flowers_path(order:'za'), class:"black-link"%>
     <%= link_to "Lowest price", flowers_path(order:'price_asc'), class:"black-link"%>
@@ -18,6 +13,8 @@
     <%= link_to "Lowest cbd ratio", flowers_path(order:'ratio_asc'), class:"black-link"%>
     <%= link_to "Highest cbd ratio", flowers_path(order:'ratio_desc'), class:"black-link"%>
     <%= link_to "reset filters", flowers_path, class:"red-link" %>
+  </div>
+  <div class="product-section">
     <% @flowers.each do |flower| %>
         <div class="card-product">
           <div class="card-product-image">
