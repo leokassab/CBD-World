@@ -7,17 +7,14 @@
 .product-filters {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .black-link {
   color: black;
   text-decoration: none;
-  background: rgb(238,174,174);
-  background: linear-gradient(352deg, rgba(238,174,174,0) 0%, rgba(217,150,113,0.013042717086834688) 100%);
-
-
+  background: white;
   font-size: 12px;
-  // border: solid;
   padding: 10px 20px;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
