@@ -88,3 +88,9 @@ a.black-button {
   transition: 0.5s !important;
   color: white;
 }
+
+.card-product-buttons-merchant {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
