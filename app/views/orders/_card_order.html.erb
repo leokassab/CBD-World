@@ -1,16 +1,15 @@
 <div class="card-order">
-  <%= image_tag "amnesia.jpeg"%>
-  <div class="card-order-info"></div>
+  <%= cl_image_tag order.flower.photo.key%>
+  <div class="card-order-info">
     <div class="card-product-order-infos">
       <h2><%= order.flower.name %></h2>
       <p>CBD: <%= order.flower.cbd_ratio.round(1) %>%</p>
       <p><%= order.flower.price %>€</p>
     </div>
     <div class="destroy-info">
-      <p>
-      <%= link_to order_path(order.id), method: :delete, data: { confirm: "Sure?" }, class: 'pull-right btn btn-default' do %>
+      <%= button_to order_path(order), method: 'delete', data: { confirm: "Sure?" }, class: 'pull-right btn btn-default' do %>
         <i class="fas fa-trash-alt"></i>
       <% end %>
-      </p>
     </div>
+  </div>
 </div>

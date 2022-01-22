@@ -5,10 +5,12 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin-top: 15px;
+  border-radius: 6px;
 }
 
 .card-order img {
-  height: 100%;
+  height: 100px;
   width: 120px;
   object-fit: cover;
 }
@@ -27,11 +29,12 @@
   margin-top: 8px;
 }
 
-.card-order-infos {
+.card-order-info {
   padding: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .card-product-order-infos {

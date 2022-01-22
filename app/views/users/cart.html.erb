@@ -8,27 +8,29 @@
       </ul>
     </div>
     <div class="go-paid col-4">
-      <div class="exp">
-        <p><%= @user.orders.where(paid: false).count %> Articles</p>
-        <p><% @total = 0 %>
-        <% @user.orders.where(paid: false).each do |order|%>
-          <% @total += order.flower.price %>
+      <div class="border-cart">
+        <div class="exp">
+          <p><%= @user.orders.where(paid: false).count %> Articles</p>
+          <p><% @total = 0 %>
+          <% @user.orders.where(paid: false).each do |order|%>
+            <% @total += order.flower.price %>
+          <% end %>
           <%= @total %>€
-        <% end %>
-        </p>
-      </div>
-      <div class="exp">
-        <p>Expédition</p>
-        <p>gratuite</p>
-      </div>
-      <hr>
-      <div class="exp">
-        <p>Total TTC</p>
-        <p><%= @total %>€</p>
-      </div>
-      <hr>
-      <div class="but-com">
-        <%= link_to "Commander", class: 'btn btn-outline-success' %>
+          </p>
+        </div>
+        <div class="exp">
+          <p>Expédition</p>
+          <p>gratuite</p>
+        </div>
+        <hr>
+        <div class="exp">
+          <p>Total TTC</p>
+          <p><%= @total %>€</p>
+        </div>
+        <hr>
+        <div class="but-com">
+            <%= button_to 'Pay now', update_all_orders_path, method: :patch , class: "btn btn-outline-success"%>
+        </div>
       </div>
     </div>
   </div>

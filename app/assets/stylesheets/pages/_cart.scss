@@ -1,4 +1,4 @@
-.go-paid {
+.border-cart {
   border: 1px solid grey;
   border-radius: 6px;
   padding: 15px;
@@ -17,4 +17,14 @@
 .but-com {
   text-align: center;
   align-items: center;
+}
+
+.order-not-paid ul {
+  list-style: none;
+  margin-left:0;
+  padding-left:0;
+}
+
+.go-paid {
+  margin-top: 15px;
 }

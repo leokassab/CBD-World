@@ -16,6 +16,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_all_orders
+    @user = current_user
+    authorize @user
+    current_user.orders.where(paid: false).each do |order|
+      order.update(paid: true)
+    end
+    redirect_to orders_path
+  end
+
+
   def cart
     set_user
     authorize @user
