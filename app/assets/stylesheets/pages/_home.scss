@@ -30,7 +30,7 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: lightgreen;
+  background: green;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
   transition: background 0.3s ease;
 }
@@ -53,6 +53,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  &:hover {
+  text-decoration: none;
+  color: lightgreen;
+  transition: 0ms;
+  }
 }
 
 
@@ -60,10 +65,20 @@
   height: 300px;
   width: 320px;
   padding: 50px;
+  &:hover {
+  text-decoration: none;
+  color: lightgreen;
+  transition: 0ms;
+  }
 }
 
 .promo-product .card-product-infos {
   text-align: center;
+  &:hover {
+  text-decoration: none;
+  color: lightgreen;
+  transition: 0ms;
+  }
 }
 
 .carousel-item .card-product {
@@ -73,6 +88,20 @@
   height: 400px;
 }
 
+ a:hover {
+  text-decoration: none;
+  color: lightgreen;
+  transition: 0ms;
+}
+
+.carousel-item .card-product-infos {
+  text-align: center;
+  &:hover {
+  text-decoration: none;
+  color: lightgreen;
+  transition: 0ms;
+  }
+}
 
 .carousel-item .card-product img{
   height: 300px;
@@ -84,6 +113,12 @@
 
 .carousel-control-next-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
+.us btn-flat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .salespic img {
