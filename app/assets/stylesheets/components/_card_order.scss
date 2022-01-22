@@ -27,9 +27,19 @@
   margin-top: 8px;
 }
 
-.card-order .card-order-infos {
+.card-order-infos {
   padding: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.card-product-order-infos {
+  padding-left: 10px;
+}
+
+.section-card-order ul {
+  list-style: none;
+  margin-left:0;
+  padding-left:0;
 }
