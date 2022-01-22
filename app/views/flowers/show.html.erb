@@ -14,7 +14,10 @@
       <h3><%= @flower.price %>€</h3>
       <p><%= @flower.description %></p>
       <p><%= @flower.weight %>g</p>
-      <%= link_to 'Ajouter au panier', new_flower_order_path(@flower), class: "btn btn-outline-warning" %>
+      <%= simple_form_for [@flower, Order.new] do |f| %>
+        <%= hidden_field_tag :from, 'show' %>
+        <%= f.button :submit, value: 'Add to cart', class: "btn btn-outline-warning"%>
+      <% end %>
     </div>
   </div>
 
@@ -69,8 +72,10 @@
     <h2>Reviews</h2>
     <div class="review-card">
       <ul><% @flower.reviews.each do |review| %>
-           <li><%= review.comment %></li>
-           <li><%= "⭐️"*review.grade %></li>
+           <div class="review-list">
+             <li><%= review.comment %></li>
+             <li><%= "⭐️"*review.grade %></li>
+           </div>
          <% end %>
       </ul>
     </div>

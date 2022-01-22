@@ -7,8 +7,12 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import { pictUploaded } from '../components/_uploaded'
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { pictUploaded } from '../components/_uploaded';
 import { merchantSignUp } from '../components/_signup';
+import { putIntoBasket } from '../components/_notif';
+import { initMapbox } from '../plugins/init_mapbox';
+import { loadDynamicContactText } from '../components/_contact';
 
 
 Rails.start()
@@ -31,5 +35,9 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   // pictUploaded();
-  merchantSignUp();
+  loadDynamicContactText();
+  putIntoBasket();
+  initMapbox();
+  // merchantSignUp();
+
 });

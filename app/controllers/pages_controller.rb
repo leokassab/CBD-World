@@ -8,5 +8,6 @@ class PagesController < ApplicationController
   end
 
   def contact
+    @markers = [{lat: 52, lng: 5,  image_url: helpers.asset_url('Cannabis_leaf_2.svg')}]
   end
 end

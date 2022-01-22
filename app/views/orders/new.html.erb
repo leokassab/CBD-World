@@ -18,7 +18,7 @@
       <p><%= @flower.weight %>g</p>
       <% if current_user %>
       <%= simple_form_for [ @flower, @order ] do |f| %>
-        <%= f.submit "Order now", class: "btn btn-primary" %>
+        <%= f.submit "Order now", class: "btn btn-primary", id: "order" %>
       <% end %>
       <% else %>
       <%= link_to "Sign in", new_user_session_path %>

@@ -1,28 +1,52 @@
-<h1>Liste de nos fleurs en vente</h1>
 
-<h2>Fleurs du moment :</h2>
-
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1604660664082-3cac347079b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);">
+  <div class="container">
+  <h1>Flowers form CBD world</h1>
+  </div>
+</div>
+<div class="container">
+<%# <div class="top-content">
+  <h1>Discover our products</h1>
+  </div> %>
+    <%# <hr/> %>
   <div class="product-section">
+   <h3>Filter flowers by :</h3>
+    <%= link_to "A to Z", flowers_path(order:'az'), class:"black-link"%>
+    <%= link_to "Z to A", flowers_path(order:'za'), class:"black-link"%>
+    <%= link_to "Lowest price", flowers_path(order:'price_asc'), class:"black-link"%>
+    <%= link_to "Highset price", flowers_path(order:'price_desc'), class:"black-link"%>
+    <%= link_to "Lowest cbd ratio", flowers_path(order:'ratio_asc'), class:"black-link"%>
+    <%= link_to "Highest cbd ratio", flowers_path(order:'ratio_desc'), class:"black-link"%>
+    <%= link_to "reset filters", flowers_path, class:"red-link" %>
     <% @flowers.each do |flower| %>
         <div class="card-product">
-          <% if flower.photo.attached?%>
-            <%= cl_image_tag flower.photo.key %>
-          <% elsif Rails.env.production? %>
-            <%= cl_image_tag "uev9db9v7q6aoikckl6tigrt1cxn" %>
-          <% else %>
-            <%= cl_image_tag "v1642155300/development/trx7himx75w75h42qcrhdgqjdnoj.jpg"%>
-          <% end %>
+          <div class="card-product-image">
+            <% if flower.photo.attached?%>
+              <%= cl_image_tag flower.photo.key %>
+            <% elsif Rails.env.production? %>
+              <%= cl_image_tag "uev9db9v7q6aoikckl6tigrt1cxn" %>
+            <% else %>
+              <%= cl_image_tag "v1642155300/development/trx7himx75w75h42qcrhdgqjdnoj.jpg" %>
+            <% end %>
+          </div>
+          <%# <hr/> %>
           <div class="card-product-infos">
             <%= link_to flower_path(flower.id) do %>
               <h3><%= flower.name %></h3>
             <% end %>
-            <p>price: <%= flower.price %>€</p>
+            <p>Price: <%= flower.price %>€</p>
             <p>CBD ratio <%= flower.cbd_ratio.round(2) %>%</p>
-            <div class="bouttons">
-              <%= link_to 'Add', new_flower_order_path(flower.id), class: "btn btn-outline-warning" %>
-              <%= link_to 'Voir plus', flower_path(flower.id), class: "btn btn-outline-success" %>
+            <hr/>
+            <div class="card-product-buttons">
+              <%= simple_form_for [flower, Order.new] do |f| %>
+                <%= hidden_field_tag :from, 'show' %>
+                <%= f.button :submit, value: 'Add to cart', class: "black-button" %>
+              <% end %>
+              <%= link_to 'See More', flower_path(flower.id), class: "white-button" %>
             </div>
           </div>
         </div>
     <% end %>
   </div>
+</div>
+</div>

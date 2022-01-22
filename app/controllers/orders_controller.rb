@@ -27,9 +27,14 @@ class OrdersController < ApplicationController
 
   def create
     @flower = Flower.find(params[:flower_id])
-    order = Order.new(paid: true, flower_id: @flower.id, user_id: current_user.id)
+    payed_or_not = params[:from] ? false : true
+    order = Order.new(paid: payed_or_not, flower_id: @flower.id, user_id: current_user.id)
     if order.save
-      redirect_to orders_path
+      if params[:from]
+        redirect_to cart_user_path(current_user)
+      else
+        redirect_to orders_path
+      end
     else
       render :new
     end
