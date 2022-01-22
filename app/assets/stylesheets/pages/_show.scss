@@ -6,6 +6,7 @@
   margin-top: 20px;
   margin-bottom: 10px;
   border-radius: 10px;
+  padding: 20px;
 }
 
 .detail-case{
@@ -15,13 +16,14 @@
   background-color: lightgray;
   border-radius: 5px;
   margin-top: 10px;
+  padding: 5px;
 }
 
 .atout{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  margin-top: 20px;
+  grid-gap: 15px;
+  margin-top: 30px;
 }
 
 .atout-card{
@@ -39,4 +41,43 @@
 
 .details h3{
   text-align: left;
+}
+
+.atout-card i {
+  font-size: 24px;
+  color: green;
+  padding: 8px;
+}
+
+.review {
+  margin-top: 50px;
+}
+
+.review h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.review-card ul {
+  list-style: none;
+  margin-left:0;
+  padding-left:0;
+  margin-top: 10px;
+}
+
+.review-list{
+  margin: 20px 0px;
+  text-align: left;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 10px;
+}
+
+.image img {
+  height: 400px;
+  width: 450px;
+  padding-right: 10px;
+}
+
+.image {
+  padding: 20px;
 }

@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>My orders</h1>
+
+  <div class="section-card-order">
+    <ul>
+    <% @orders.where(paid: true).each do |order| %>
+      <li><%= render "card_order", order: order %></li>
+    <% end %>
+    </ul>
+  </div>
+
+  <%= link_to "Back", :back, class: 'btn btn-outline-success'%>
+</div>
