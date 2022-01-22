@@ -2,7 +2,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 20px;
+  margin: 10px;
   border-radius: 5px;
 }
 
@@ -11,7 +11,6 @@
   width: calc(100%-10px);
   margin: 5px;
   justify-content: center;
-  box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.30);
 }
 
 .card-product-image img {
@@ -26,9 +25,6 @@
   margin: 0;
   align-items: center;
   text-decoration: none;
-  // text-overflow: ellipsis;
-  // white-space: nowrap;
-  // width: 50px;
 }
 
 .card-product a {
@@ -50,14 +46,6 @@
   text-align: left;
   padding: 16px;
   color: black;
-}
-
-.card-product-infos {
-  text-align: left;
-  padding: 16px;
-  color: black;
-
-  // width: 100%;
 }
 
 .card-product-buttons {
@@ -86,9 +74,7 @@
   background-color: white;
   padding: 10px 40px;
   border-color: black;
-  // border: solid;
   color: black;
-  // border: 0.5px;
   margin-top: 2px;
 }
 
