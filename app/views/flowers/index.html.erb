@@ -48,7 +48,7 @@
 
             <hr/>
             <div class="card-product-buttons">
-              <%= link_to 'Add to cart', cart_user_path(current_user), class: "black-button" %>
+              <%= link_to 'Add to cart', cart_user_path(current_user), class: "black-button", id: "order" %>
               <%= link_to 'See More', flower_path(flower.id), class: "white-button" %>
             </div>
           </div>
