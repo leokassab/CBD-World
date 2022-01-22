@@ -1,28 +1,58 @@
+<div class="container">
+<div class="top-content">
 <h1>Liste de nos fleurs en vente</h1>
 
-<h2>Fleurs du moment :</h2>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" label="Category">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+<div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown link
+  </a>
 
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+</div>
+
+  <h2>Fleurs du moment :</h2>
+  </div>
   <div class="product-section">
     <% @flowers.each do |flower| %>
         <div class="card-product">
-          <% if flower.photo.attached?%>
-            <%= cl_image_tag flower.photo.key %>
-          <% elsif Rails.env.production? %>
-            <%= cl_image_tag "uev9db9v7q6aoikckl6tigrt1cxn" %>
-          <% else %>
-            <%= cl_image_tag "v1642155300/development/trx7himx75w75h42qcrhdgqjdnoj.jpg"%>
-          <% end %>
+          <div class="card-product-image">
+            <% if flower.photo.attached?%>
+              <%= cl_image_tag flower.photo.key %>
+            <% elsif Rails.env.production? %>
+              <%= cl_image_tag "uev9db9v7q6aoikckl6tigrt1cxn" %>
+            <% else %>
+              <%= cl_image_tag "v1642155300/development/trx7himx75w75h42qcrhdgqjdnoj.jpg" %>
+            <% end %>
+          </div>
+          <%# <hr/> %>
           <div class="card-product-infos">
             <%= link_to flower_path(flower.id) do %>
               <h3><%= flower.name %></h3>
             <% end %>
-            <p>price: <%= flower.price %>€</p>
+            <p>Price: <%= flower.price %>€</p>
             <p>CBD ratio <%= flower.cbd_ratio.round(2) %>%</p>
-            <div class="bouttons">
-              <%= link_to 'Add', cart_user_path(current_user), class: "btn btn-outline-warning" %>
-              <%= link_to 'Voir plus', flower_path(flower.id), class: "btn btn-outline-success" %>
+
+            <hr/>
+            <div class="card-product-buttons">
+              <%= link_to 'Add to cart', cart_user_path(current_user), class: "black-button" %>
+              <%= link_to 'See More', flower_path(flower.id), class: "white-button" %>
             </div>
           </div>
         </div>
     <% end %>
   </div>
+</div>
