@@ -16,4 +16,8 @@ class UserPolicy < ApplicationPolicy
   def cart?
     return true
   end
+
+  def update_all_orders?
+    true
+  end
 end

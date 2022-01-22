@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  skip_before_action :authenticate_user! , only: [:index, :show, :new]
+  skip_before_action :authenticate_user! , only: [:index, :show, :new, :update, :destroy, :update_all_orders]
 
   def index
     @orders = Order.where(user: current_user)
@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
   def destroy
     set_order
     @order.destroy
-    redirect_to orders_path
+    redirect_to cart_user_path(current_user)
   end
 
   def new
