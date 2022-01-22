@@ -14,7 +14,10 @@
       <h3><%= @flower.price %>€</h3>
       <p><%= @flower.description %></p>
       <p><%= @flower.weight %>g</p>
-      <%= link_to 'Ajouter au panier', cart_user_path(current_user), class: "btn btn-outline-warning" %>
+      <%= simple_form_for [@flower, Order.new] do |f| %>
+        <%= hidden_field_tag :from, 'show' %>
+        <%= f.button :submit, value: 'Add to cart', class: "btn btn-outline-warning"%>
+      <% end %>
     </div>
   </div>
 

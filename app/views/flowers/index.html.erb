@@ -47,7 +47,10 @@
             <p>CBD ratio <%= flower.cbd_ratio.round(2) %>%</p>
             <hr/>
             <div class="card-product-buttons">
-              <%= link_to 'Add to cart', cart_user_path(current_user), method: "POST", class: "black-button" %>
+              <%= simple_form_for [flower, Order.new] do |f| %>
+                <%= hidden_field_tag :from, 'show' %>
+                <%= f.button :submit, value: 'Add to cart', class: "black-button" %>
+              <% end %>
               <%= link_to 'See More', flower_path(flower.id), class: "white-button" %>
             </div>
           </div>
