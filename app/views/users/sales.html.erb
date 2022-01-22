@@ -7,7 +7,7 @@
     <% @sales.each do |sale| %>
 
       <div class="card-sale">
-        <div class="d-block text-center pl-3">
+        <div class="salespic d-block text-center pl-3">
           <% if sale.flower.photo.attached?%>
             <%= cl_image_tag sale.flower.photo.key %>
           <% elsif Rails.env.production? %>
@@ -30,7 +30,8 @@
         </div>
 
         <div class="card-sale-infos">
-          <h2> <%= "Total: #{sale.total_amount}0 €" %> </h2>
+
+          <h2> <%= "Total: #{sale.flower.price} €" %> </h2>
           <p> <%= "Status: #{sale.paid ? "Paid" : "Pending payment"}" %> </p>
         </div>
 
