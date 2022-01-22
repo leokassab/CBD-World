@@ -1,7 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+    <%= image_tag "logo.png" %>
+
 </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-iconn"></span>
@@ -16,19 +17,28 @@
           <%= link_to "Products", flowers_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">CBD Story</a>
+          <%= link_to "CBD Story", cbd_story_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <%= link_to "Contact", contact_path, class: "nav-link" %>
+        </li>
+        <li>
+          <% if user_signed_in? %>
+            <%= link_to cart_user_path(current_user), class: "nav-link" do %>
+                <i class="fas fa-shopping-cart "></i><span class="badge badge-danger" style="display:none;">1</span>
+            <% end %>
+          <% end %>
         </li>
         <li class="nav-item dropleft">
           <% if user_signed_in? %>
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/random", class: "avatar dropdown-toggle", id: "navbarDropdownMenuLink", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
               <%= link_to "My account","#", class: "dropdown-item" %>
+              <div class="dropdown-divider"></div>
               <% if policy(Flower).create? %>
-                <%= link_to "My products",user_path(current_user), class: "dropdown-item" %>
+                <%= link_to "My products", user_path(current_user), class: "dropdown-item" %>
               <% end %>
+              <%= link_to "My sales", sales_user_path(current_user), class: "dropdown-item" %>
               <%= link_to "My orders", orders_path(current_user), class: "dropdown-item" %>
               <div class="dropdown-divider"></div>
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", method: :delete %>

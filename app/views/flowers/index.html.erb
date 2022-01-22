@@ -45,9 +45,10 @@
             <% end %>
             <p>Price: <%= flower.price %>€</p>
             <p>CBD ratio <%= flower.cbd_ratio.round(2) %>%</p>
+
             <hr/>
             <div class="card-product-buttons">
-              <%= link_to 'Add to cart', new_flower_order_path(flower.id), class: "black-button" %>
+              <%= link_to 'Add to cart', cart_user_path(current_user), class: "black-button" %>
               <%= link_to 'See More', flower_path(flower.id), class: "white-button" %>
             </div>
           </div>

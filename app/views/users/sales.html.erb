@@ -1,0 +1,45 @@
+<div class="container pt-5 pb-3">
+  <h1>My sales</h1>
+</div>
+
+<div class="container">
+
+    <% @sales.each do |sale| %>
+
+      <div class="card-sale">
+        <div class="d-block text-center pl-3">
+          <% if sale.flower.photo.attached?%>
+            <%= cl_image_tag sale.flower.photo.key %>
+          <% elsif Rails.env.production? %>
+            <%= cl_image_tag "uev9db9v7q6aoikckl6tigrt1cxn" %>
+          <% else %>
+            <%= cl_image_tag "v1642155300/development/trx7himx75w75h42qcrhdgqjdnoj.jpg"%>
+          <% end %>
+        </div>
+
+
+        <div class="card-sale-infos">
+          <h2> <%= "Command number: #{sale.id}" %> </h2>
+          <p><%= "Date: #{sale.created_at}" %></p>
+        </div>
+
+        <div class="card-sale-infos">
+          <h2> <%= "Product: #{sale.flower.name} (#{sale.flower.weight} g)" %> </h2>
+          <p><%= "Buyer: #{sale.user.first_name} #{sale.user.last_name}" %></p>
+          <p><%= "Address: #{sale.user.adress}, #{sale.user.zip_code} #{sale.user.city}" %></p>
+        </div>
+
+        <div class="card-sale-infos">
+          <h2> <%= "Total: #{sale.total_amount}0 €" %> </h2>
+          <p> <%= "Status: #{sale.paid ? "Paid" : "Pending payment"}" %> </p>
+        </div>
+
+
+        <div class="pr-3 text-center">
+          <i class="fas fa-print"></i>
+          <p> Print the delivery note </p>
+        </div>
+
+      </div>
+    <% end %>
+</div>
