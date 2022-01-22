@@ -1,7 +1,23 @@
 class FlowersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @flowers = policy_scope(Flower.all)
+    if params[:order] == 'az'
+        @flowers = Flower.all.order('name')
+    elsif params[:order] == 'za'
+        @flowers = Flower.all.order('name').reverse
+    elsif params[:order] == 'price_desc'
+        @flowers = Flower.all.order('price').reverse
+    elsif params[:order] == 'price_asc'
+        @flowers = Flower.all.order('price')
+    elsif params[:order] == 'ratio_asc'
+        @flowers = Flower.all.order('cbd_ratio')
+    elsif params[:order] == 'ratio_desc'
+        @flowers = Flower.all.order('cbd_ratio').reverse
+    else
+        @flowers = Flower.all
+    end
   end
 
   def show

@@ -9,3 +9,35 @@
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
 }
+
+.black-link {
+  color: black;
+  text-decoration: none;
+}
+
+.black-link:hover {
+  color: grey;
+  transition: 0.3s;
+  text-decoration: none !important;
+}
+
+.black-link:focus {
+  color: green;
+  text-decoration: none !important;
+}
+
+.red-link {
+  color: red;
+  text-decoration: none;
+}
+
+.red-link:hover {
+  color: red;
+}
+
+.top-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}

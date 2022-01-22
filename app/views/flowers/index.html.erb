@@ -1,32 +1,23 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1604660664082-3cac347079b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);">
+  <div class="container">
+  <h1>Flowers form CBD world</h1>
+  </div>
+</div>
 <div class="container">
-<div class="top-content">
-<h1>Liste de nos fleurs en vente</h1>
-
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" label="Category">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-<div class="dropdown show">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown link
-  </a>
-
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
-</div>
-
-  <h2>Fleurs du moment :</h2>
-  </div>
+<%# <div class="top-content">
+  <h1>Discover our products</h1>
+  </div> %>
+    <%# <hr/> %>
   <div class="product-section">
+   <h3>Filter flowers by :</h3>
+    <%= link_to "A to Z", flowers_path(order:'az'), class:"black-link"%>
+    <%= link_to "Z to A", flowers_path(order:'za'), class:"black-link"%>
+    <%= link_to "Lowest price", flowers_path(order:'price_asc'), class:"black-link"%>
+    <%= link_to "Highset price", flowers_path(order:'price_desc'), class:"black-link"%>
+    <%= link_to "Lowest cbd ratio", flowers_path(order:'ratio_asc'), class:"black-link"%>
+    <%= link_to "Highest cbd ratio", flowers_path(order:'ratio_desc'), class:"black-link"%>
+    <%= link_to "reset filters", flowers_path, class:"red-link" %>
     <% @flowers.each do |flower| %>
         <div class="card-product">
           <div class="card-product-image">
@@ -55,4 +46,5 @@
         </div>
     <% end %>
   </div>
+</div>
 </div>
