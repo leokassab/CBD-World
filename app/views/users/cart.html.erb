@@ -3,7 +3,7 @@
     <div class="order-not-paid col-8">
       <ul>
         <% @user.orders.where(paid: false).each do |order| %>
-          <li><%= render "./users/card_order", order: order %></li>
+          <li><%= render "./orders/card_order", order: order %></li>
         <% end %>
       </ul>
     </div>
