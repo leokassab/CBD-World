@@ -12,13 +12,19 @@
   <div class="promo">
     <div class="product-section-promo">
       <div class="promo-product" >
-          <%= render "./flowers/card_product", flower: @flowers[5] %>
+      <%= link_to flower_path(@flowers[6]) do %>
+        <%= render "./flowers/card_product", flower: @flowers[6] %>
+      <% end %>
       </div>
       <div class="promo-product" >
-          <%= render "./flowers/card_product", flower: @flowers[1] %>
+      <%= link_to flower_path(@flowers[1]) do %>
+        <%= render "./flowers/card_product", flower: @flowers[1] %>
+      <% end %>
       </div>
       <div class="promo-product" >
-          <%= render "./flowers/card_product", flower: @flowers[15]%>
+      <%= link_to flower_path(@flowers[15]) do %>
+        <%= render "./flowers/card_product", flower: @flowers[15] %>
+      <% end %>
       </div>
     </div>
   </div>
@@ -27,7 +33,9 @@
     <div class="carousel-inner">
       <% @flowers.each_with_index do |flower, index| %>
       <div class="carousel-item <%= 'active' if index == 0 %>" data-interval="10000">
+      <%= link_to flower_path(flower.id) do %>
         <%= render "flowers/card_product", flower: flower %>
+      <% end %>
         <%# <img src="..." class="d-block w-100" alt="..."> %>
       </div>
       <% end %>
@@ -57,5 +65,6 @@
         <i class="far fa-handshake"></i>
         <p>Satisfaction garantie</p>
       </div>
+    </div>
   </div>
 </div>
