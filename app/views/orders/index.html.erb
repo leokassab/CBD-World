@@ -4,7 +4,7 @@
   <div class="section-card-order">
     <ul>
     <% @orders.where(paid: true).each do |order| %>
-      <li><%= render "./users/card_order", order: order %></li>
+      <li><%= render "card_order", order: order %></li>
     <% end %>
     </ul>
   </div>
