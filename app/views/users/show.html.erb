@@ -16,17 +16,30 @@
   </div>
   <div class="product-section">
     <% current_user.flowers.each do |flower| %>
-      <%= link_to flower_path(flower.id) do %>
         <div class="card-product">
-          <%= cl_image_tag flower.photo.key, height:300, width: 400, crop: :fill %>
+          <div class="card-product-image">
+            <% if flower.photo.attached?%>
+              <%= cl_image_tag flower.photo.key %>
+            <% elsif Rails.env.production? %>
+              <%= cl_image_tag "uev9db9v7q6aoikckl6tigrt1cxn" %>
+            <% else %>
+              <%= cl_image_tag "v1642155300/development/trx7himx75w75h42qcrhdgqjdnoj.jpg" %>
+            <% end %>
+          </div>
+          <%# <hr/> %>
           <div class="card-product-infos">
-            <%= flower.name %>
-            <%= flower.price %>
-            <%= link_to "update", edit_flower_path(flower),  class: "btn btn-flat" %>
-            <%= link_to "delete", flower_path(flower), method: :delete, data: { confirm: "Sure?" }, class: "btn btn-flat" %>
+            <%= link_to flower_path(flower.id) do %>
+              <h3><%= flower.name %></h3>
+            <% end %>
+            <p>Price: <%= flower.price %>€</p>
+            <p>CBD ratio <%= flower.cbd_ratio.round(2) %>%</p>
+            <hr/>
+            <div class="card-product-buttons-merchant">
+              <%= link_to "update", edit_flower_path(flower),  class: "btn btn-flat" %>
+              <%= link_to "delete", flower_path(flower), method: :delete, data: { confirm: "Sure?" }, class: "btn btn-flat" %>
+            </div>
           </div>
         </div>
-      <% end %>
     <% end %>
   </div>
 </div>
