@@ -4,15 +4,27 @@
 @import "cbd_world";
 @import "contact";
 
-.product-section {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
+.product-filters {
+  display: flex;
+  justify-content: space-between;
 }
 
 .black-link {
   color: black;
   text-decoration: none;
+  background: rgb(238,174,174);
+  background: linear-gradient(352deg, rgba(238,174,174,0) 0%, rgba(217,150,113,0.013042717086834688) 100%);
+
+
+  font-size: 12px;
+  // border: solid;
+  padding: 10px 20px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.12)
+
 }
 
 .black-link:hover {
@@ -29,7 +41,24 @@
 .red-link {
   color: red;
   text-decoration: none;
+  text-decoration: none;
+  background: rgb(238,174,174);
+  background: linear-gradient(352deg, rgba(238,174,174,0) 0%, rgba(217,150,113,0.013042717086834688) 100%);
+  font-size: 12px;
+  padding: 10px 20px;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.12)
 }
+
+.product-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
 
 .red-link:hover {
   color: red;
